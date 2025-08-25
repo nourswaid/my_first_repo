@@ -12,12 +12,14 @@ class DatabaseHandler:
     @staticmethod
     def create_table():
         with DatabaseHandler._connect() as conn:
-            conn.execute('''CREATE TABLE IF NOT EXIST students
-                        ( id INTEGER PRIMARY KEY AUTOINCREMENT,
-                        name TEXT NOT NULL,
-                        email TEXT NOT NULL,
-                        age INTEGER NOT NULL,
-                        gender TEXT NOT NULL )''')
+            conn.execute('''CREATE TABLE IF NOT EXISTS students (
+                                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                name TEXT NOT NULL,
+                                email TEXT NOT NULL,
+                                age INTEGER NOT NULL,
+                                gender TEXT NOT NULL
+                            )''')
+
         
     @staticmethod
     def insert_student(name ,email,age,gender):

@@ -1,5 +1,5 @@
 import tkinter as tk
-
+from registration_form import registrationForm
 
 
 class MainApplication(tk.Tk):
@@ -15,7 +15,8 @@ class MainApplication(tk.Tk):
         title_lable=tk.Label(self,text="student managment system",font=('Helvetica',16))
         title_lable.pack(side='top',fill='x')
 
-        self.registration_form=registrationForm()
+        self.registration_form=registrationForm(self)
+        self.registration_form.pack(side="left",fill='y',padx=10,pady=10)
 
 
 
